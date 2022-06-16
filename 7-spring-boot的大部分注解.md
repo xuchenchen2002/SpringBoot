@@ -6,21 +6,14 @@
 
 ### 0.前言
 
-本文已经收录进我的 75K Star 的 Java 开源项目 JavaGuide：[github.com/Snailclimb/…](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FSnailclimb%2FJavaGuide) 相关阅读：[V2.0 版本的 《JavaGuide面试突击版》来啦！带着它的在线阅读版本来啦！](https://link.juejin.cn/?target=https%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzg2OTA0Njk0OA%3D%3D%26mid%3D2247486494%26idx%3D1%26sn%3Da17e8278bd9fc1354449f925ef990c25%26chksm%3Dcea243d5f9d5cac3b0b3b55769e162363256eb7fa483997c21b62cddb4ef2d583a2bcae0ac1a%26token%3D170865726%26lang%3Dzh_CN%23rd)
+本这篇文章介绍的 Spring/SpringBoot 常用注解基本已经涵盖遇到的大部分常用的场景。对于每一个注解我都说了具体用法，掌握搞懂，使用 SpringBoot 来开发项目基本没啥大问题了！
 
-可以毫不夸张地说，这篇文章介绍的 Spring/SpringBoot 常用注解基本已经涵盖你工作中遇到的大部分常用的场景。对于每一个注解我都说了具体用法，掌握搞懂，使用 SpringBoot 来开发项目基本没啥大问题了！
-
-**为什么要写这篇文章？**
-
-最近看到网上有一篇关于 SpringBoot 常用注解的文章被转载的比较多，我看了文章内容之后属实觉得质量有点低，并且有点会误导没有太多实际使用经验的人（这些人又占据了大多数）。所以，自己索性花了大概 两天时间简单总结一下了。
-
-**因为我个人的能力和精力有限，如果有任何不对或者需要完善的地方，请帮忙指出！Guide 哥感激不尽！**
 
 ### 1. `@SpringBootApplication`
 
 这里先单独拎出`@SpringBootApplication` 注解说一下，虽然我们一般不会主动去使用它。
 
-*Guide 哥：这个注解是 Spring Boot 项目的基石，创建 SpringBoot 项目之后会默认在主类加上。*
+这个注解是 Spring Boot 项目的基石，创建 SpringBoot 项目之后会默认在主类加上。*
 
 ```
 @SpringBootApplication
