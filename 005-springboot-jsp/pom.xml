@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- 父依赖：官方的springboot项目依赖地址 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.6.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<!-- 当前自己本项目的地址坐标 -->
+	<groupId>com.nchu</groupId>
+	<artifactId>005-springboot-jsp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- web应用项目的依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 使用jsp需要的依赖，必须要这些依赖的jar包才能使用jsp的东西 -->
+		<!-- 处理jsp的依赖：注意了这里的依赖不能搞错了，不然就不能返回显示出jsp的视图 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- 处理servlet的依赖：可能不会是使用到-->
+		<!-- 处理jstl的依赖：可能不会使用到-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<resources>
+			<!-- 指定jsp文件编译之后的存放位置目录 -->
+			<resource>
+				<!-- 指定原来jsp的目录-->
+				<directory>src/main/webapp</directory>
+				<!-- 指定编译后的目录 -->
+				<targetPath>META-INF/resources</targetPath>
+				<!-- 指定那些文件或者目录下的文件需要处理 -->
+				<includes>
+					<!-- 这里就是一种处理格式，以后慢慢的会理解懂的 -->
+					<include>**/*.*</include>
+				</includes>
+				<!-- 到这里之后就可以说jsp的访问都是完成了-->
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
